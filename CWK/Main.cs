@@ -12,9 +12,6 @@ namespace CWK
 {
     public partial class Main : Form
     {
-        public int Hours;
-        public int Minutes;
-        public int Seconds;
 
         public Main()
         {
@@ -25,40 +22,19 @@ namespace CWK
             AddIntervals();
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-            Hours = (int)numericUpDown1.Value;
-        }
-
-        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
-        {
-            Minutes = (int)numericUpDown2.Value;
-        }
-
-        private void numericUpDown3_ValueChanged(object sender, EventArgs e)
-        {
-            Seconds = (int)numericUpDown3.Value;
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             DateTime finalDate = new DateTime(
                 dateTimePicker1.Value.Year,
                 dateTimePicker1.Value.Month,
                 dateTimePicker1.Value.Day,
-                Hours,
-                Minutes,
-                Seconds);
+                (int)numericUpDown1.Value,
+                (int)numericUpDown2.Value,
+                (int)numericUpDown3.Value);
 
 
             finalDate = finalDate.AddMinutes((int)comboBox1.SelectedValue);
-
-            label11.Text = finalDate.ToString();
+            
 
         }
 
