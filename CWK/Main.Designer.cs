@@ -46,6 +46,8 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -64,9 +66,9 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(66, 14);
+            this.numericUpDown1.Location = new System.Drawing.Point(109, 19);
             this.numericUpDown1.Maximum = new decimal(new int[] {
-            24,
+            23,
             0,
             0,
             0});
@@ -76,9 +78,9 @@
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(66, 40);
+            this.numericUpDown2.Location = new System.Drawing.Point(109, 45);
             this.numericUpDown2.Maximum = new decimal(new int[] {
-            60,
+            59,
             0,
             0,
             0});
@@ -96,7 +98,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(111, 15);
+            this.label2.Location = new System.Drawing.Point(154, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 9;
@@ -105,7 +107,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(111, 42);
+            this.label3.Location = new System.Drawing.Point(154, 47);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 10;
@@ -113,6 +115,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.numericUpDown3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.numericUpDown1);
@@ -128,9 +131,9 @@
             // 
             // numericUpDown3
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(66, 66);
+            this.numericUpDown3.Location = new System.Drawing.Point(109, 71);
             this.numericUpDown3.Maximum = new decimal(new int[] {
-            60,
+            59,
             0,
             0,
             0});
@@ -141,7 +144,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(111, 68);
+            this.label4.Location = new System.Drawing.Point(154, 73);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 11;
@@ -195,7 +198,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000;
+            this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
             // groupBox4
@@ -211,10 +214,24 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(63, 27);
+            this.label8.Location = new System.Drawing.Point(88, 25);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(0, 13);
             this.label8.TabIndex = 22;
+            // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(27, 45);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 13);
+            this.label5.TabIndex = 23;
             // 
             // Main
             // 
@@ -269,6 +286,8 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label label5;
     }
 }
 

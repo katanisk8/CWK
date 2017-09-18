@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,11 +22,13 @@ namespace CWK
             numericUpDown1.Value = DateTime.Now.Hour;
             numericUpDown2.Value = DateTime.Now.Minute;
             numericUpDown3.Value = DateTime.Now.Second;
+            label5.Text = DateTime.Now.ToString(@"HH\:mm\:ss");
             AddIntervals();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             finalDate = new DateTime(
                 dateTimePicker1.Value.Year,
                 dateTimePicker1.Value.Month,
@@ -35,9 +38,13 @@ namespace CWK
                 (int)numericUpDown3.Value);
 
             finalDate = finalDate.AddMinutes((int)comboBox1.SelectedValue);
-
-            timer1.Enabled = true;
-            timer1.Start();
+            timeLeft = finalDate - DateTime.Now;
+            
+            if (timeLeft.TotalSeconds > 0)
+            {
+                timer1.Enabled = true;
+                timer1.Start();
+            }
         }
 
         private void AddIntervals()
@@ -60,7 +67,24 @@ namespace CWK
         private void timer1_Tick_1(object sender, EventArgs e)
         {
             timeLeft = finalDate - DateTime.Now;
-            label8.Text = timeLeft.Duration().ToString();
+
+            if (timeLeft.TotalHours > 24 && timeLeft.Days < 2)
+            {
+                label8.Text = String.Format("{0} day + {1}", timeLeft.Days, timeLeft.Duration().ToString(@"hh\:mm\:ss"));
+            }
+            else if(timeLeft.Days > 1)
+            {
+                label8.Text = String.Format("{0} days + {1}", timeLeft.Days, timeLeft.Duration().ToString(@"hh\:mm\:ss"));
+            }
+            else
+            {
+                label8.Text = timeLeft.Duration().ToString(@"hh\:mm\:ss");
+            }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            label5.Text = DateTime.Now.ToString(@"HH\:mm\:ss");
         }
     }
 }
