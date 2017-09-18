@@ -12,6 +12,8 @@ namespace CWK
 {
     public partial class Main : Form
     {
+        private DateTime finalDate;
+        private TimeSpan timeLeft;
 
         public Main()
         {
@@ -24,7 +26,7 @@ namespace CWK
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DateTime finalDate = new DateTime(
+            finalDate = new DateTime(
                 dateTimePicker1.Value.Year,
                 dateTimePicker1.Value.Month,
                 dateTimePicker1.Value.Day,
@@ -32,13 +34,14 @@ namespace CWK
                 (int)numericUpDown2.Value,
                 (int)numericUpDown3.Value);
 
-
             finalDate = finalDate.AddMinutes((int)comboBox1.SelectedValue);
-            
 
+            timer1.Enabled = true;
+            timer1.Start();
         }
 
         private void AddIntervals()
+
         {
             var intervals = new Dictionary<string, int>();
 
@@ -52,6 +55,12 @@ namespace CWK
             comboBox1.DataSource = new BindingSource(intervals, null);
             comboBox1.DisplayMember = "Key";
             comboBox1.ValueMember = "Value";
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            timeLeft = finalDate - DateTime.Now;
+            label8.Text = timeLeft.Duration().ToString();
         }
     }
 }
