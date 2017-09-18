@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace CWK
@@ -38,13 +32,36 @@ namespace CWK
                 (int)numericUpDown3.Value);
 
             finalDate = finalDate.AddMinutes((int)comboBox1.SelectedValue);
-            timeLeft = finalDate - DateTime.Now;
+            SetTime();
             
             if (timeLeft.TotalSeconds > 0)
             {
                 timer1.Enabled = true;
                 timer1.Start();
             }
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            SetTime();
+
+            if (timeLeft.TotalMilliseconds <= 0)
+            {
+                var psi = new ProcessStartInfo("shutdown", "/s /t 0");
+                psi.CreateNoWindow = true;
+                psi.UseShellExecute = false;
+                Process.Start(psi);
+            }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            label5.Text = DateTime.Now.ToString(@"HH\:mm\:ss");
+        }
+
+        private void label8_SizeChanged(object sender, EventArgs e)
+        {
+            label8.Left = (this.ClientSize.Width - label8.Size.Width) / 2;
         }
 
         private void AddIntervals()
@@ -64,7 +81,7 @@ namespace CWK
             comboBox1.ValueMember = "Value";
         }
 
-        private void timer1_Tick_1(object sender, EventArgs e)
+        private void SetTime()
         {
             timeLeft = finalDate - DateTime.Now;
 
@@ -72,7 +89,7 @@ namespace CWK
             {
                 label8.Text = String.Format("{0} day + {1}", timeLeft.Days, timeLeft.Duration().ToString(@"hh\:mm\:ss"));
             }
-            else if(timeLeft.Days > 1)
+            else if (timeLeft.Days > 1)
             {
                 label8.Text = String.Format("{0} days + {1}", timeLeft.Days, timeLeft.Duration().ToString(@"hh\:mm\:ss"));
             }
@@ -80,11 +97,6 @@ namespace CWK
             {
                 label8.Text = timeLeft.Duration().ToString(@"hh\:mm\:ss");
             }
-        }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            label5.Text = DateTime.Now.ToString(@"HH\:mm\:ss");
         }
     }
 }
