@@ -29,257 +29,239 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.Calendar = new System.Windows.Forms.DateTimePicker();
+            this.HoursNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.MinutesNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.HoursLabel = new System.Windows.Forms.Label();
+            this.MinutesLabel = new System.Windows.Forms.Label();
+            this.SetTimeGroupBox = new System.Windows.Forms.GroupBox();
+            this.SetTimeLabel = new System.Windows.Forms.Label();
+            this.SecondsNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.SecondsLabel = new System.Windows.Forms.Label();
+            this.SetDateGroupBox = new System.Windows.Forms.GroupBox();
+            this.SetIntervalGroupBox = new System.Windows.Forms.GroupBox();
+            this.IntervalsComboBox = new System.Windows.Forms.ComboBox();
+            this.ShutDownButton = new System.Windows.Forms.Button();
+            this.TimeLeftTimer = new System.Windows.Forms.Timer(this.components);
+            this.TimeLeftGroupBox = new System.Windows.Forms.GroupBox();
+            this.ProcessNameLabel = new System.Windows.Forms.Label();
+            this.TimeLeftLabel = new System.Windows.Forms.Label();
+            this.SetTimeTimer = new System.Windows.Forms.Timer(this.components);
+            this.HibernateButton = new System.Windows.Forms.Button();
+            this.SleepButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.HoursNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinutesNumericUpDown)).BeginInit();
+            this.SetTimeGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SecondsNumericUpDown)).BeginInit();
+            this.SetDateGroupBox.SuspendLayout();
+            this.SetIntervalGroupBox.SuspendLayout();
+            this.TimeLeftGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // Calendar
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(6, 19);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 0;
+            this.Calendar.Location = new System.Drawing.Point(6, 19);
+            this.Calendar.Name = "Calendar";
+            this.Calendar.Size = new System.Drawing.Size(200, 20);
+            this.Calendar.TabIndex = 0;
             // 
-            // numericUpDown1
+            // HoursNumericUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(109, 19);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.HoursNumericUpDown.Location = new System.Drawing.Point(109, 19);
+            this.HoursNumericUpDown.Maximum = new decimal(new int[] {
             23,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(39, 20);
-            this.numericUpDown1.TabIndex = 4;
+            this.HoursNumericUpDown.Name = "HoursNumericUpDown";
+            this.HoursNumericUpDown.Size = new System.Drawing.Size(39, 20);
+            this.HoursNumericUpDown.TabIndex = 4;
             // 
-            // numericUpDown2
+            // MinutesNumericUpDown
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(109, 45);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.MinutesNumericUpDown.Location = new System.Drawing.Point(109, 45);
+            this.MinutesNumericUpDown.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(39, 20);
-            this.numericUpDown2.TabIndex = 6;
+            this.MinutesNumericUpDown.Name = "MinutesNumericUpDown";
+            this.MinutesNumericUpDown.Size = new System.Drawing.Size(39, 20);
+            this.MinutesNumericUpDown.TabIndex = 6;
             // 
-            // label1
+            // HoursLabel
             // 
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 23);
-            this.label1.TabIndex = 0;
+            this.HoursLabel.AutoSize = true;
+            this.HoursLabel.Location = new System.Drawing.Point(154, 20);
+            this.HoursLabel.Name = "HoursLabel";
+            this.HoursLabel.Size = new System.Drawing.Size(35, 13);
+            this.HoursLabel.TabIndex = 9;
+            this.HoursLabel.Text = "Hours";
             // 
-            // label2
+            // MinutesLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(154, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Hours";
+            this.MinutesLabel.AutoSize = true;
+            this.MinutesLabel.Location = new System.Drawing.Point(154, 47);
+            this.MinutesLabel.Name = "MinutesLabel";
+            this.MinutesLabel.Size = new System.Drawing.Size(44, 13);
+            this.MinutesLabel.TabIndex = 10;
+            this.MinutesLabel.Text = "Minutes";
             // 
-            // label3
+            // SetTimeGroupBox
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(154, 47);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Minutes";
+            this.SetTimeGroupBox.Controls.Add(this.SetTimeLabel);
+            this.SetTimeGroupBox.Controls.Add(this.SecondsNumericUpDown);
+            this.SetTimeGroupBox.Controls.Add(this.SecondsLabel);
+            this.SetTimeGroupBox.Controls.Add(this.HoursNumericUpDown);
+            this.SetTimeGroupBox.Controls.Add(this.MinutesLabel);
+            this.SetTimeGroupBox.Controls.Add(this.MinutesNumericUpDown);
+            this.SetTimeGroupBox.Controls.Add(this.HoursLabel);
+            this.SetTimeGroupBox.Location = new System.Drawing.Point(12, 73);
+            this.SetTimeGroupBox.Name = "SetTimeGroupBox";
+            this.SetTimeGroupBox.Size = new System.Drawing.Size(217, 97);
+            this.SetTimeGroupBox.TabIndex = 12;
+            this.SetTimeGroupBox.TabStop = false;
+            this.SetTimeGroupBox.Text = "Set Time";
             // 
-            // groupBox1
+            // SetTimeLabel
             // 
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.numericUpDown3);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.numericUpDown2);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 73);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(217, 97);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Set Time";
+            this.SetTimeLabel.AutoSize = true;
+            this.SetTimeLabel.Location = new System.Drawing.Point(27, 45);
+            this.SetTimeLabel.Name = "SetTimeLabel";
+            this.SetTimeLabel.Size = new System.Drawing.Size(0, 13);
+            this.SetTimeLabel.TabIndex = 23;
             // 
-            // label5
+            // SecondsNumericUpDown
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 45);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 13);
-            this.label5.TabIndex = 23;
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.Location = new System.Drawing.Point(109, 71);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
+            this.SecondsNumericUpDown.Location = new System.Drawing.Point(109, 71);
+            this.SecondsNumericUpDown.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(39, 20);
-            this.numericUpDown3.TabIndex = 8;
+            this.SecondsNumericUpDown.Name = "SecondsNumericUpDown";
+            this.SecondsNumericUpDown.Size = new System.Drawing.Size(39, 20);
+            this.SecondsNumericUpDown.TabIndex = 8;
             // 
-            // label4
+            // SecondsLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(154, 73);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Seconds";
+            this.SecondsLabel.AutoSize = true;
+            this.SecondsLabel.Location = new System.Drawing.Point(154, 73);
+            this.SecondsLabel.Name = "SecondsLabel";
+            this.SecondsLabel.Size = new System.Drawing.Size(49, 13);
+            this.SecondsLabel.TabIndex = 11;
+            this.SecondsLabel.Text = "Seconds";
             // 
-            // groupBox2
+            // SetDateGroupBox
             // 
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(217, 55);
-            this.groupBox2.TabIndex = 13;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Set Date";
+            this.SetDateGroupBox.Controls.Add(this.Calendar);
+            this.SetDateGroupBox.Location = new System.Drawing.Point(12, 12);
+            this.SetDateGroupBox.Name = "SetDateGroupBox";
+            this.SetDateGroupBox.Size = new System.Drawing.Size(217, 55);
+            this.SetDateGroupBox.TabIndex = 13;
+            this.SetDateGroupBox.TabStop = false;
+            this.SetDateGroupBox.Text = "Set Date";
             // 
-            // groupBox3
+            // SetIntervalGroupBox
             // 
-            this.groupBox3.Controls.Add(this.comboBox1);
-            this.groupBox3.Location = new System.Drawing.Point(12, 176);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(217, 52);
-            this.groupBox3.TabIndex = 13;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Set Interval";
+            this.SetIntervalGroupBox.Controls.Add(this.IntervalsComboBox);
+            this.SetIntervalGroupBox.Location = new System.Drawing.Point(12, 176);
+            this.SetIntervalGroupBox.Name = "SetIntervalGroupBox";
+            this.SetIntervalGroupBox.Size = new System.Drawing.Size(217, 52);
+            this.SetIntervalGroupBox.TabIndex = 13;
+            this.SetIntervalGroupBox.TabStop = false;
+            this.SetIntervalGroupBox.Text = "Set Interval";
             // 
-            // comboBox1
+            // IntervalsComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(19, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(174, 21);
-            this.comboBox1.TabIndex = 14;
+            this.IntervalsComboBox.FormattingEnabled = true;
+            this.IntervalsComboBox.Location = new System.Drawing.Point(19, 19);
+            this.IntervalsComboBox.Name = "IntervalsComboBox";
+            this.IntervalsComboBox.Size = new System.Drawing.Size(174, 21);
+            this.IntervalsComboBox.TabIndex = 14;
             // 
-            // button1
+            // ShutDownButton
             // 
-            this.button1.Location = new System.Drawing.Point(12, 234);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(68, 48);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Shut Down";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ShutDownButton.Location = new System.Drawing.Point(12, 234);
+            this.ShutDownButton.Name = "ShutDownButton";
+            this.ShutDownButton.Size = new System.Drawing.Size(68, 48);
+            this.ShutDownButton.TabIndex = 14;
+            this.ShutDownButton.Text = "Shut Down";
+            this.ShutDownButton.UseVisualStyleBackColor = true;
+            this.ShutDownButton.Click += new System.EventHandler(this.ShutDownButton_Click);
             // 
-            // label11
+            // TimeLeftTimer
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(279, 128);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(0, 13);
-            this.label11.TabIndex = 21;
+            this.TimeLeftTimer.Interval = 1000;
+            this.TimeLeftTimer.Tick += new System.EventHandler(this.TimeLeftTimer_Tick);
             // 
-            // timer1
+            // TimeLeftGroupBox
             // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            this.TimeLeftGroupBox.Controls.Add(this.ProcessNameLabel);
+            this.TimeLeftGroupBox.Controls.Add(this.TimeLeftLabel);
+            this.TimeLeftGroupBox.Location = new System.Drawing.Point(12, 288);
+            this.TimeLeftGroupBox.Name = "TimeLeftGroupBox";
+            this.TimeLeftGroupBox.Size = new System.Drawing.Size(217, 74);
+            this.TimeLeftGroupBox.TabIndex = 13;
+            this.TimeLeftGroupBox.TabStop = false;
+            this.TimeLeftGroupBox.Text = "Time Left";
             // 
-            // groupBox4
+            // ProcessNameLabel
             // 
-            this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Location = new System.Drawing.Point(12, 288);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(217, 74);
-            this.groupBox4.TabIndex = 13;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Time Left";
+            this.ProcessNameLabel.AutoSize = true;
+            this.ProcessNameLabel.Location = new System.Drawing.Point(106, 16);
+            this.ProcessNameLabel.Name = "ProcessNameLabel";
+            this.ProcessNameLabel.Size = new System.Drawing.Size(0, 13);
+            this.ProcessNameLabel.TabIndex = 23;
+            this.ProcessNameLabel.SizeChanged += new System.EventHandler(this.ProcessNameLabel_SizeChanged);
             // 
-            // label6
+            // TimeLeftLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(71, 16);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 13);
-            this.label6.TabIndex = 23;
+            this.TimeLeftLabel.AutoSize = true;
+            this.TimeLeftLabel.Location = new System.Drawing.Point(106, 47);
+            this.TimeLeftLabel.Name = "TimeLeftLabel";
+            this.TimeLeftLabel.Size = new System.Drawing.Size(0, 13);
+            this.TimeLeftLabel.TabIndex = 22;
+            this.TimeLeftLabel.SizeChanged += new System.EventHandler(this.TimeLeftLabel_SizeChanged);
             // 
-            // label8
+            // SetTimeTimer
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(78, 48);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 13);
-            this.label8.TabIndex = 22;
-            this.label8.SizeChanged += new System.EventHandler(this.label8_SizeChanged);
+            this.SetTimeTimer.Enabled = true;
+            this.SetTimeTimer.Interval = 1000;
+            this.SetTimeTimer.Tick += new System.EventHandler(this.SetTimeTimer_Tick);
             // 
-            // timer2
+            // HibernateButton
             // 
-            this.timer2.Enabled = true;
-            this.timer2.Interval = 1000;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            this.HibernateButton.Location = new System.Drawing.Point(86, 234);
+            this.HibernateButton.Name = "HibernateButton";
+            this.HibernateButton.Size = new System.Drawing.Size(68, 48);
+            this.HibernateButton.TabIndex = 22;
+            this.HibernateButton.Text = "Hibernate";
+            this.HibernateButton.UseVisualStyleBackColor = true;
+            this.HibernateButton.Click += new System.EventHandler(this.HibernateButton_Click);
             // 
-            // button2
+            // SleepButton
             // 
-            this.button2.Location = new System.Drawing.Point(86, 234);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(68, 48);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Hibernate";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(161, 234);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(68, 48);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Sleep";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.SleepButton.Location = new System.Drawing.Point(161, 234);
+            this.SleepButton.Name = "SleepButton";
+            this.SleepButton.Size = new System.Drawing.Size(68, 48);
+            this.SleepButton.TabIndex = 23;
+            this.SleepButton.Text = "Sleep";
+            this.SleepButton.UseVisualStyleBackColor = true;
+            this.SleepButton.Click += new System.EventHandler(this.SleepButton_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(239, 368);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.SleepButton);
+            this.Controls.Add(this.HibernateButton);
+            this.Controls.Add(this.TimeLeftGroupBox);
+            this.Controls.Add(this.ShutDownButton);
+            this.Controls.Add(this.SetIntervalGroupBox);
+            this.Controls.Add(this.SetDateGroupBox);
+            this.Controls.Add(this.SetTimeGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -288,15 +270,15 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CWK";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HoursNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinutesNumericUpDown)).EndInit();
+            this.SetTimeGroupBox.ResumeLayout(false);
+            this.SetTimeGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SecondsNumericUpDown)).EndInit();
+            this.SetDateGroupBox.ResumeLayout(false);
+            this.SetIntervalGroupBox.ResumeLayout(false);
+            this.TimeLeftGroupBox.ResumeLayout(false);
+            this.TimeLeftGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,28 +286,26 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker Calendar;
+        private System.Windows.Forms.NumericUpDown HoursNumericUpDown;
+        private System.Windows.Forms.NumericUpDown MinutesNumericUpDown;
+        private System.Windows.Forms.Label HoursLabel;
+        private System.Windows.Forms.Label MinutesLabel;
+        private System.Windows.Forms.GroupBox SetTimeGroupBox;
+        private System.Windows.Forms.GroupBox SetDateGroupBox;
+        private System.Windows.Forms.GroupBox SetIntervalGroupBox;
+        private System.Windows.Forms.ComboBox IntervalsComboBox;
+        private System.Windows.Forms.Button ShutDownButton;
+        private System.Windows.Forms.NumericUpDown SecondsNumericUpDown;
+        private System.Windows.Forms.Label SecondsLabel;
+        private System.Windows.Forms.Timer TimeLeftTimer;
+        private System.Windows.Forms.GroupBox TimeLeftGroupBox;
+        private System.Windows.Forms.Label TimeLeftLabel;
+        private System.Windows.Forms.Timer SetTimeTimer;
+        private System.Windows.Forms.Label SetTimeLabel;
+        private System.Windows.Forms.Button HibernateButton;
+        private System.Windows.Forms.Button SleepButton;
+        private System.Windows.Forms.Label ProcessNameLabel;
     }
 }
 

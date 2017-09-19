@@ -7,74 +7,74 @@ namespace CWK
 {
     public partial class Main : Form
     {
-        private DateTime finalDate;
-        private TimeSpan timeLeft;
+        private DateTime FinalDate;
+        private TimeSpan TimeLeft;
         private int WhatToDo;
 
         public Main()
         {
             InitializeComponent();
-            numericUpDown1.Value = DateTime.Now.Hour;
-            numericUpDown2.Value = DateTime.Now.Minute;
-            numericUpDown3.Value = DateTime.Now.Second;
-            label5.Text = DateTime.Now.ToString(@"HH\:mm\:ss");
+            HoursNumericUpDown.Value = DateTime.Now.Hour;
+            MinutesNumericUpDown.Value = DateTime.Now.Minute;
+            SecondsNumericUpDown.Value = DateTime.Now.Second;
+            SetTimeLabel.Text = DateTime.Now.ToString(@"HH\:mm\:ss");
             AddIntervals();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ShutDownButton_Click(object sender, EventArgs e)
         {
             WhatToDo = 0;
             DisableButtons();
             CalculateFinalDate();
             SetTime();
             RunTimer();
-            label6.Text = "Shuting Down...";
+            ProcessNameLabel.Text = "Shuting Down...";
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void HibernateButton_Click(object sender, EventArgs e)
         {
             WhatToDo = 1;
             DisableButtons();
             CalculateFinalDate();
             SetTime();
             RunTimer();
-            label6.Text = "Hibernating...";
+            ProcessNameLabel.Text = "Hibernating...";
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void SleepButton_Click(object sender, EventArgs e)
         {
             WhatToDo = 2;
             DisableButtons();
             CalculateFinalDate();
             SetTime();
             RunTimer();
-            label6.Text = "Snoozing...";
+            ProcessNameLabel.Text = "Snoozing...";
         }
 
-        private void timer1_Tick_1(object sender, EventArgs e)
+        private void TimeLeftTimer_Tick(object sender, EventArgs e)
         {
             SetTime();
 
-            if ((int)timeLeft.TotalSeconds == 0)
+            if ((int)TimeLeft.TotalSeconds == 0)
             {
                 FunctionsToRun();
             }
         }
 
-        private void timer2_Tick(object sender, EventArgs e)
+        private void SetTimeTimer_Tick(object sender, EventArgs e)
         {
-            label5.Text = DateTime.Now.ToString(@"HH\:mm\:ss");
+            SetTimeLabel.Text = DateTime.Now.ToString(@"HH\:mm\:ss");
         }
 
-        private void label8_SizeChanged(object sender, EventArgs e)
+        private void TimeLeftLabel_SizeChanged(object sender, EventArgs e)
         {
-            label8.Left = (this.ClientSize.Width - label8.Size.Width) / 2;
+            TimeLeftLabel.Left = (this.ClientSize.Width - TimeLeftLabel.Size.Width) / 2;
         }
 
-        private void label6_SizeChanged(object sender, EventArgs e)
+        private void ProcessNameLabel_SizeChanged(object sender, EventArgs e)
         {
-            label6.Left = (this.ClientSize.Width - label6.Size.Width) / 2;
+            ProcessNameLabel.Left = (this.ClientSize.Width - ProcessNameLabel.Size.Width) / 2;
         }
 
         private void AddIntervals()
@@ -88,53 +88,53 @@ namespace CWK
             intervals.Add("2 Hour", 7200000);
             intervals.Add("3 Hour", 10800000);
 
-            comboBox1.DataSource = new BindingSource(intervals, null);
-            comboBox1.DisplayMember = "Key";
-            comboBox1.ValueMember = "Value";
+            IntervalsComboBox.DataSource = new BindingSource(intervals, null);
+            IntervalsComboBox.DisplayMember = "Key";
+            IntervalsComboBox.ValueMember = "Value";
         }
 
         private void SetTime()
         {
-            timeLeft = finalDate - DateTime.Now;
+            TimeLeft = FinalDate - DateTime.Now;
 
-            if (timeLeft.TotalHours > 24 && timeLeft.Days < 2)
+            if (TimeLeft.TotalHours > 24 && TimeLeft.Days < 2)
             {
-                label8.Text = String.Format("{0} day + {1}", timeLeft.Days, timeLeft.Duration().ToString(@"hh\:mm\:ss"));
+                TimeLeftLabel.Text = String.Format("{0} day + {1}", TimeLeft.Days, TimeLeft.Duration().ToString(@"hh\:mm\:ss"));
             }
-            else if (timeLeft.Days > 1)
+            else if (TimeLeft.Days > 1)
             {
-                label8.Text = String.Format("{0} days + {1}", timeLeft.Days, timeLeft.Duration().ToString(@"hh\:mm\:ss"));
+                TimeLeftLabel.Text = String.Format("{0} days + {1}", TimeLeft.Days, TimeLeft.Duration().ToString(@"hh\:mm\:ss"));
             }
             else
             {
-                label8.Text = timeLeft.Duration().ToString(@"hh\:mm\:ss");
+                TimeLeftLabel.Text = TimeLeft.Duration().ToString(@"hh\:mm\:ss");
             }
         }
 
         private void CalculateFinalDate()
         {
-            finalDate = new DateTime(
-                dateTimePicker1.Value.Year,
-                dateTimePicker1.Value.Month,
-                dateTimePicker1.Value.Day,
-                (int)numericUpDown1.Value,
-                (int)numericUpDown2.Value,
-                (int)numericUpDown3.Value);
+            FinalDate = new DateTime(
+                Calendar.Value.Year,
+                Calendar.Value.Month,
+                Calendar.Value.Day,
+                (int)HoursNumericUpDown.Value,
+                (int)MinutesNumericUpDown.Value,
+                (int)SecondsNumericUpDown.Value);
 
-            finalDate = finalDate.AddMilliseconds((int)comboBox1.SelectedValue);
+            FinalDate = FinalDate.AddMilliseconds((int)IntervalsComboBox.SelectedValue);
         }
 
         private void DisableButtons()
         {
-            button1.Enabled = button2.Enabled = button3.Enabled = false;
+            ShutDownButton.Enabled = HibernateButton.Enabled = SleepButton.Enabled = false;
         }
 
         private void RunTimer()
         {
-            if (timeLeft.TotalSeconds > 0)
+            if (TimeLeft.TotalSeconds > 0)
             {
-                timer1.Enabled = true;
-                timer1.Start();
+                TimeLeftTimer.Enabled = true;
+                TimeLeftTimer.Start();
             }
             else
             {
@@ -144,16 +144,16 @@ namespace CWK
 
         private void FunctionsToRun()
         {
-            timer1.Stop();
-            timer2.Stop();
+            TimeLeftTimer.Stop();
+            SetTimeTimer.Stop();
 
             switch (WhatToDo)
             {
                 case 0:
-                    var psi = new ProcessStartInfo("shutdown", "/s /t 0");
-                    psi.CreateNoWindow = true;
-                    psi.UseShellExecute = false;
-                    Process.Start(psi);
+                    var shutDownProcess = new ProcessStartInfo("shutdown", "/s /t 0");
+                    shutDownProcess.CreateNoWindow = true;
+                    shutDownProcess.UseShellExecute = false;
+                    Process.Start(shutDownProcess);
                     break;
                 case 1:
                     Application.SetSuspendState(PowerState.Hibernate, true, true);
@@ -162,7 +162,7 @@ namespace CWK
                     Application.SetSuspendState(PowerState.Suspend, true, true);
                     break;
                 default:
-                    Console.WriteLine("Default case");
+                    MessageBox.Show("Error");
                     break;
             }
         }
