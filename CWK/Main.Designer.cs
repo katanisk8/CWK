@@ -209,7 +209,7 @@
             // ProcessNameLabel
             // 
             this.ProcessNameLabel.AutoSize = true;
-            this.ProcessNameLabel.Location = new System.Drawing.Point(106, 16);
+            this.ProcessNameLabel.Location = new System.Drawing.Point(97, 16);
             this.ProcessNameLabel.Name = "ProcessNameLabel";
             this.ProcessNameLabel.Size = new System.Drawing.Size(0, 13);
             this.ProcessNameLabel.TabIndex = 23;
@@ -218,7 +218,7 @@
             // TimeLeftLabel
             // 
             this.TimeLeftLabel.AutoSize = true;
-            this.TimeLeftLabel.Location = new System.Drawing.Point(106, 47);
+            this.TimeLeftLabel.Location = new System.Drawing.Point(97, 47);
             this.TimeLeftLabel.Name = "TimeLeftLabel";
             this.TimeLeftLabel.Size = new System.Drawing.Size(0, 13);
             this.TimeLeftLabel.TabIndex = 22;
@@ -280,7 +280,6 @@
             this.TimeLeftGroupBox.ResumeLayout(false);
             this.TimeLeftGroupBox.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

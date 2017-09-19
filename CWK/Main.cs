@@ -14,11 +14,7 @@ namespace CWK
         public Main()
         {
             InitializeComponent();
-            HoursNumericUpDown.Value = DateTime.Now.Hour;
-            MinutesNumericUpDown.Value = DateTime.Now.Minute;
-            SecondsNumericUpDown.Value = DateTime.Now.Second;
-            SetTimeLabel.Text = DateTime.Now.ToString(@"HH\:mm\:ss");
-            AddIntervals();
+            SetComponents();
         }
 
         private void ShutDownButton_Click(object sender, EventArgs e)
@@ -77,16 +73,23 @@ namespace CWK
             ProcessNameLabel.Left = (this.ClientSize.Width - ProcessNameLabel.Size.Width) / 2;
         }
 
-        private void AddIntervals()
+        private void SetComponents()
         {
-            var intervals = new Dictionary<string, int>();
+            HoursNumericUpDown.Value = DateTime.Now.Hour;
+            MinutesNumericUpDown.Value = DateTime.Now.Minute;
+            SecondsNumericUpDown.Value = DateTime.Now.Second;
 
-            intervals.Add("No", 1);
-            intervals.Add("10 Minutes", 600000);
-            intervals.Add("30 Minutes", 1800000);
-            intervals.Add("1 Hour", 3600000);
-            intervals.Add("2 Hour", 7200000);
-            intervals.Add("3 Hour", 10800000);
+            SetTimeLabel.Text = DateTime.Now.ToString(@"HH\:mm\:ss");
+
+            Dictionary<string, int> intervals = new Dictionary<string, int>
+            {
+                {"No", 1},
+                {"10 Minutes", 600000},
+                {"30 Minutes", 1800000},
+                {"1 Hour", 3600000},
+                {"2 Hour", 7200000},
+                {"3 Hour", 10800000}
+            };
 
             IntervalsComboBox.DataSource = new BindingSource(intervals, null);
             IntervalsComboBox.DisplayMember = "Key";
