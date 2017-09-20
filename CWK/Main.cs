@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Windows.Forms;
+using static CWK.Functions;
 
 namespace CWK
 {
@@ -9,7 +9,6 @@ namespace CWK
     {
         private DateTime FinalDate;
         private TimeSpan TimeLeft;
-        private int WhatToDo;
 
         public Main()
         {
@@ -19,42 +18,39 @@ namespace CWK
 
         private void ShutDownButton_Click(object sender, EventArgs e)
         {
-            WhatToDo = 0;
-            DisableButtons();
+            DisableComponents();
             CalculateFinalDate();
             SetTime();
-            RunTimer();
+            RunTimer(WhatToDo.ShutDown);
             ProcessNameLabel.Text = "Shuting Down...";
 
         }
 
         private void HibernateButton_Click(object sender, EventArgs e)
         {
-            WhatToDo = 1;
-            DisableButtons();
+            DisableComponents();
             CalculateFinalDate();
             SetTime();
-            RunTimer();
+            RunTimer(WhatToDo.Hibernate);
             ProcessNameLabel.Text = "Hibernating...";
         }
 
         private void SleepButton_Click(object sender, EventArgs e)
         {
-            WhatToDo = 2;
-            DisableButtons();
+            DisableComponents();
             CalculateFinalDate();
             SetTime();
-            RunTimer();
+            RunTimer(WhatToDo.Sleep);
             ProcessNameLabel.Text = "Snoozing...";
         }
 
         private void TimeLeftTimer_Tick(object sender, EventArgs e)
         {
             SetTime();
-
+            
             if ((int)TimeLeft.TotalSeconds == 0)
             {
-                FunctionsToRun();
+                FunctionsToRun((WhatToDo)TimeLeftTimer.Tag);
             }
         }
 
@@ -81,7 +77,7 @@ namespace CWK
 
             SetTimeLabel.Text = DateTime.Now.ToString(@"HH\:mm\:ss");
 
-            Dictionary<string, int> intervals = new Dictionary<string, int>
+            Dictionary<string, int> addTime = new Dictionary<string, int>
             {
                 {"No", 1},
                 {"10 Minutes", 600000},
@@ -91,9 +87,9 @@ namespace CWK
                 {"3 Hour", 10800000}
             };
 
-            IntervalsComboBox.DataSource = new BindingSource(intervals, null);
-            IntervalsComboBox.DisplayMember = "Key";
-            IntervalsComboBox.ValueMember = "Value";
+            AddTimeComboBox.DataSource = new BindingSource(addTime, null);
+            AddTimeComboBox.DisplayMember = "Key";
+            AddTimeComboBox.ValueMember = "Value";
         }
 
         private void SetTime()
@@ -124,50 +120,37 @@ namespace CWK
                 (int)MinutesNumericUpDown.Value,
                 (int)SecondsNumericUpDown.Value);
 
-            FinalDate = FinalDate.AddMilliseconds((int)IntervalsComboBox.SelectedValue);
+            FinalDate = FinalDate.AddMilliseconds((int)AddTimeComboBox.SelectedValue);
         }
 
-        private void DisableButtons()
+        private void DisableComponents()
         {
+            Calendar.Enabled = false;
+            HoursNumericUpDown.Enabled = MinutesNumericUpDown.Enabled = SecondsNumericUpDown.Enabled = false;
+            AddTimeComboBox.Enabled = false;
             ShutDownButton.Enabled = HibernateButton.Enabled = SleepButton.Enabled = false;
         }
 
-        private void RunTimer()
+        private void RunTimer(WhatToDo WhatToDo)
         {
             if (TimeLeft.TotalSeconds > 0)
             {
                 TimeLeftTimer.Enabled = true;
                 TimeLeftTimer.Start();
+                TimeLeftTimer.Tag = WhatToDo;
             }
             else
             {
-                FunctionsToRun();
+                FunctionsToRun(WhatToDo);
             }
         }
 
-        private void FunctionsToRun()
+        private void FunctionsToRun(WhatToDo WhatToDo)
         {
             TimeLeftTimer.Stop();
             SetTimeTimer.Stop();
-
-            switch (WhatToDo)
-            {
-                case 0:
-                    var shutDownProcess = new ProcessStartInfo("shutdown", "/s /t 0");
-                    shutDownProcess.CreateNoWindow = true;
-                    shutDownProcess.UseShellExecute = false;
-                    Process.Start(shutDownProcess);
-                    break;
-                case 1:
-                    Application.SetSuspendState(PowerState.Hibernate, true, true);
-                    break;
-                case 2:
-                    Application.SetSuspendState(PowerState.Suspend, true, true);
-                    break;
-                default:
-                    MessageBox.Show("Error");
-                    break;
-            }
+            
+            Functions.Function(WhatToDo);
         }
     }
 }

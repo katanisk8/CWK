@@ -39,8 +39,8 @@
             this.SecondsNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.SecondsLabel = new System.Windows.Forms.Label();
             this.SetDateGroupBox = new System.Windows.Forms.GroupBox();
-            this.SetIntervalGroupBox = new System.Windows.Forms.GroupBox();
-            this.IntervalsComboBox = new System.Windows.Forms.ComboBox();
+            this.AddTimeGroupBox = new System.Windows.Forms.GroupBox();
+            this.AddTimeComboBox = new System.Windows.Forms.ComboBox();
             this.ShutDownButton = new System.Windows.Forms.Button();
             this.TimeLeftTimer = new System.Windows.Forms.Timer(this.components);
             this.TimeLeftGroupBox = new System.Windows.Forms.GroupBox();
@@ -54,7 +54,7 @@
             this.SetTimeGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SecondsNumericUpDown)).BeginInit();
             this.SetDateGroupBox.SuspendLayout();
-            this.SetIntervalGroupBox.SuspendLayout();
+            this.AddTimeGroupBox.SuspendLayout();
             this.TimeLeftGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -162,23 +162,23 @@
             this.SetDateGroupBox.TabStop = false;
             this.SetDateGroupBox.Text = "Set Date";
             // 
-            // SetIntervalGroupBox
+            // AddTimeGroupBox
             // 
-            this.SetIntervalGroupBox.Controls.Add(this.IntervalsComboBox);
-            this.SetIntervalGroupBox.Location = new System.Drawing.Point(12, 176);
-            this.SetIntervalGroupBox.Name = "SetIntervalGroupBox";
-            this.SetIntervalGroupBox.Size = new System.Drawing.Size(217, 52);
-            this.SetIntervalGroupBox.TabIndex = 13;
-            this.SetIntervalGroupBox.TabStop = false;
-            this.SetIntervalGroupBox.Text = "Set Interval";
+            this.AddTimeGroupBox.Controls.Add(this.AddTimeComboBox);
+            this.AddTimeGroupBox.Location = new System.Drawing.Point(12, 176);
+            this.AddTimeGroupBox.Name = "AddTimeGroupBox";
+            this.AddTimeGroupBox.Size = new System.Drawing.Size(217, 52);
+            this.AddTimeGroupBox.TabIndex = 13;
+            this.AddTimeGroupBox.TabStop = false;
+            this.AddTimeGroupBox.Text = "Add Time";
             // 
-            // IntervalsComboBox
+            // AddTimeComboBox
             // 
-            this.IntervalsComboBox.FormattingEnabled = true;
-            this.IntervalsComboBox.Location = new System.Drawing.Point(19, 19);
-            this.IntervalsComboBox.Name = "IntervalsComboBox";
-            this.IntervalsComboBox.Size = new System.Drawing.Size(174, 21);
-            this.IntervalsComboBox.TabIndex = 14;
+            this.AddTimeComboBox.FormattingEnabled = true;
+            this.AddTimeComboBox.Location = new System.Drawing.Point(19, 19);
+            this.AddTimeComboBox.Name = "AddTimeComboBox";
+            this.AddTimeComboBox.Size = new System.Drawing.Size(174, 21);
+            this.AddTimeComboBox.TabIndex = 14;
             // 
             // ShutDownButton
             // 
@@ -259,7 +259,7 @@
             this.Controls.Add(this.HibernateButton);
             this.Controls.Add(this.TimeLeftGroupBox);
             this.Controls.Add(this.ShutDownButton);
-            this.Controls.Add(this.SetIntervalGroupBox);
+            this.Controls.Add(this.AddTimeGroupBox);
             this.Controls.Add(this.SetDateGroupBox);
             this.Controls.Add(this.SetTimeGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -276,7 +276,7 @@
             this.SetTimeGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SecondsNumericUpDown)).EndInit();
             this.SetDateGroupBox.ResumeLayout(false);
-            this.SetIntervalGroupBox.ResumeLayout(false);
+            this.AddTimeGroupBox.ResumeLayout(false);
             this.TimeLeftGroupBox.ResumeLayout(false);
             this.TimeLeftGroupBox.PerformLayout();
             this.ResumeLayout(false);
@@ -292,8 +292,8 @@
         private System.Windows.Forms.Label MinutesLabel;
         private System.Windows.Forms.GroupBox SetTimeGroupBox;
         private System.Windows.Forms.GroupBox SetDateGroupBox;
-        private System.Windows.Forms.GroupBox SetIntervalGroupBox;
-        private System.Windows.Forms.ComboBox IntervalsComboBox;
+        private System.Windows.Forms.GroupBox AddTimeGroupBox;
+        private System.Windows.Forms.ComboBox AddTimeComboBox;
         private System.Windows.Forms.Button ShutDownButton;
         private System.Windows.Forms.NumericUpDown SecondsNumericUpDown;
         private System.Windows.Forms.Label SecondsLabel;
