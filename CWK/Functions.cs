@@ -16,16 +16,16 @@ namespace CWK
         {
             switch (WhatToDo)
             {
-                case 0:
+                case WhatToDo.ShutDown:
                     var shutDownProcess = new ProcessStartInfo("shutdown", "/s /t 0");
                     shutDownProcess.CreateNoWindow = true;
                     shutDownProcess.UseShellExecute = false;
                     Process.Start(shutDownProcess);
                     break;
-                case 1:
+                case WhatToDo.Hibernate:
                     Application.SetSuspendState(PowerState.Hibernate, true, true);
                     break;
-                case 2:
+                case WhatToDo.Sleep:
                     Application.SetSuspendState(PowerState.Suspend, true, true);
                     break;
                 default:
