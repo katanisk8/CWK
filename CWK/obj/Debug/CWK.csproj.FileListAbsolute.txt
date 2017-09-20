@@ -1,0 +1,10 @@
+C:\Users\Michal Makowej\Desktop\C#\Projekty\CWK\CWK\bin\Debug\CWK.exe.config
+C:\Users\Michal Makowej\Desktop\C#\Projekty\CWK\CWK\bin\Debug\CWK.exe
+C:\Users\Michal Makowej\Desktop\C#\Projekty\CWK\CWK\bin\Debug\CWK.pdb
+C:\Users\Michal Makowej\Desktop\C#\Projekty\CWK\CWK\obj\Debug\CWK.Main.resources
+C:\Users\Michal Makowej\Desktop\C#\Projekty\CWK\CWK\obj\Debug\CWK.Properties.Resources.resources
+C:\Users\Michal Makowej\Desktop\C#\Projekty\CWK\CWK\obj\Debug\CWK.csproj.GenerateResource.Cache
+C:\Users\Michal Makowej\Desktop\C#\Projekty\CWK\CWK\obj\Debug\CWK.csproj.CoreCompileInputs.cache
+C:\Users\Michal Makowej\Desktop\C#\Projekty\CWK\CWK\obj\Debug\CWK.exe
+C:\Users\Michal Makowej\Desktop\C#\Projekty\CWK\CWK\obj\Debug\CWK.pdb
+C:\Users\Michal Makowej\Desktop\C#\Projekty\CWK\CWK\obj\Debug\CWK.csprojResolveAssemblyReference.cache
